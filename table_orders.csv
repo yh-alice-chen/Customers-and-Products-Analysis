@@ -1,4 +1,4 @@
-orderNumber,orderDate,requiredDate,shippedDate,status,comments,customerNumber
+Order_ID,Order_Date,Required_Date,Shipped_Date,Status,Comments,Customer_ID
 10100,06/01/2003,13/01/2003,10/01/2003,Shipped,null,363
 10101,09/01/2003,18/01/2003,11/01/2003,Shipped,Check on availability.,128
 10102,10/01/2003,18/01/2003,14/01/2003,Shipped,null,181
