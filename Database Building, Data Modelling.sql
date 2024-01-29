@@ -26,7 +26,7 @@ Last_Name VARCHAR(50),
 First_Name VARCHAR(50),
 Extension VARCHAR(10),
 Email VARCHAR(50),
-Office_Code INT, 
+Office_ID INT, 
 Report_To INT,
 Job_Title VARCHAR(50)
 );
