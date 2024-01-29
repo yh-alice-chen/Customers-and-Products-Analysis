@@ -57,7 +57,7 @@ Order_Date VARCHAR(30),
 Required_Date VARCHAR(30),
 Shipped_Date VARCHAR(30),
 Status VARCHAR(30),
-Comments VARCHAR(100),
+Comments VARCHAR(1000),
 Customer_ID INT
 );
 
