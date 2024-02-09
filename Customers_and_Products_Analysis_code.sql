@@ -1,4 +1,4 @@
---- create database ---
+-- create database --
 CREATE DATABASE Customer_Product_Analysis;
 
 USE Customer_Product_Analysis;
@@ -112,67 +112,56 @@ ADD FOREIGN KEY (Office_ID) REFERENCES Offices(Office_ID);
 
 -- table overview --  
 SELECT 'Customers' AS table_name, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
-            FROM Information_Schema.Columns
-           WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Customers') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Customers) AS Number_Of_Rows
+       (SELECT COUNT(*) AS Number_Of_Columns
+          FROM Information_Schema.Columns
+         WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Customers') AS Number_Of_Attributes,
+        (SELECT COUNT(*) FROM Customers) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Products' AS Table_Name, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
-            FROM Information_Schema.Columns
-           WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Products') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Products) AS Number_Of_Rows
+        (SELECT COUNT(*) AS Number_Of_Columns
+           FROM Information_Schema.Columns
+          WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Products') AS Number_Of_Attributes,
+        (SELECT COUNT(*) FROM Products) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Product_Lines' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
-            FROM Information_Schema.Columns
-           WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Product_Lines') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Product_Lines) AS Number_Of_Rows
+        (SELECT COUNT(*) AS Number_Of_Columns
+           FROM Information_Schema.Columns
+          WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Product_Lines') AS Number_Of_Attributes,
+        (SELECT COUNT(*) FROM Product_Lines) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Orders' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
-            FROM Information_Schema.Columns
-           WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Orders') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Orders) AS Number_Of_Rows
+        (SELECT COUNT(*) AS Number_Of_Columns
+           FROM Information_Schema.Columns
+          WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Orders') AS Number_Of_Attributes,
+        (SELECT COUNT(*) FROM Orders) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Order_details' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
-            FROM Information_Schema.Columns
-           WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Order_Details') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Order_Details) AS Number_Of_Rows
+         (SELECT COUNT(*) AS Number_Of_Columns
+           FROM Information_Schema.Columns
+        WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Order_Details') AS Number_Of_Attributes,
+         (SELECT COUNT(*) FROM Order_Details) AS Number_Of_Rows
 UNION ALL 
 SELECT 'Payments' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
+         (SELECT COUNT(*) AS Number_Of_Columns
             FROM Information_Schema.Columns
            WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Payments') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Payments) AS Number_Of_Rows
+         (SELECT COUNT(*) FROM Payments) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Employees' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
+	 (SELECT COUNT(*) AS Number_Of_Columns
             FROM Information_Schema.Columns
            WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Employees') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Employees) AS Number_Of_Rows
+         (SELECT COUNT(*) 
+	    FROM Employees) AS Number_Of_Rows
  UNION ALL 
 SELECT 'Offices' AS TABLE_NAME, 
-		 (SELECT COUNT(*) AS Number_Of_Columns
+	 (SELECT COUNT(*) AS Number_Of_Columns
             FROM Information_Schema.Columns
            WHERE Table_Schema = 'Customer_Product_Analysis' AND TABLE_NAME = 'Offices') AS Number_Of_Attributes,
-          (SELECT COUNT(*) FROM Offices) AS Number_Of_Rows;
+         (SELECT COUNT(*) 
+	    FROM Offices) AS Number_Of_Rows;
 
-/*
-Question 1: Which product line should the company order more of?
-
-Scene setting: 
-Given the company's budget constraints, optimising orders can be crucial. 
-To do so, it is necessary to evaluate how the company can adjust the order qty effectively. 
-
-Methodology:
-To determine which proudct line to order more of, we consider products with low stock and high performance. 
-
-Assumption: 
-We assume that low stock represents a product's stock status (total ordered qty / qty in stock) below 0.3.
-*/
-
+-- Question 1: Which product line should the company order more of? --
 -- calculate low stock for each product --
 SELECT p.Product_ID, p.Product_Line, p.Product_Name, ROUND(SUM(o.Order_qty/p.Inventory),2) AS Low_Stock
   FROM Products p 
@@ -190,71 +179,53 @@ SELECT p.Product_ID, p.Product_Line, p.Product_Name,ROUND(SUM(o.Order_qty * o.Un
  ORDER BY Product_Performance DESC;
 
 -- using a Common Table Expression (CTE) to display priority products for restocking using the IN operator --
-WITH Low_Stock 
-AS
-(SELECT p.Product_ID, p.Product_Line, p.Product_Name, ROUND(SUM(o.Order_qty/p.Inventory),2) AS Low_Stock
-   FROM Products p 
-  INNER JOIN Order_Details o
-     ON p.Product_ID = o.Product_ID
-  GROUP BY p.Product_ID
-  ORDER BY Low_Stock
+WITH 
+Low_Stock AS(
+SELECT p.Product_ID, p.Product_Line, p.Product_Name, ROUND(SUM(o.Order_qty/p.Inventory),2) AS Low_Stock
+  FROM Products p 
+ INNER JOIN Order_Details o
+    ON p.Product_ID = o.Product_ID
+ GROUP BY p.Product_ID
+ ORDER BY Low_Stock
 ),
-Product_Performance
-AS
-(SELECT p.Product_ID, p.Product_Line, p.Product_Name,ROUND(SUM(o.Order_qty * o.Unit_Price),2) AS Product_Performance
-   FROM Order_Details o
-  INNER JOIN Products p
-     ON p.Product_ID = o.Product_ID
-  GROUP BY p.Product_ID
-  ORDER BY Product_Performance DESC
+Product_Performance AS(
+SELECT p.Product_ID, p.Product_Line, p.Product_Name,ROUND(SUM(o.Order_qty * o.Unit_Price),2) AS Product_Performance
+  FROM Order_Details o
+ INNER JOIN Products p
+    ON p.Product_ID = o.Product_ID
+ GROUP BY p.Product_ID
+ ORDER BY Product_Performance DESC
 )
 SELECT Product_Name, Product_Line
   FROM Product_Performance 
  WHERE Product_ID IN (SELECT Product_ID
-					    FROM Low_Stock)
+			FROM Low_Stock)
  GROUP BY Product_ID
  ORDER BY Product_Performance DESC
  LIMIT 10;
  
-/*
-Question 2: How should the company tailor marketing and communication strategies to customer behaviours?
-
-Scene setting: 
-Effective strategies must be planned based on different target customer groups. 
-To propose effective marketing strategies, the company is advised to develop strategies to customers who generate the most profit, 
-aiming to enhance their loyalty. 
-Conversely, for customers who contribute the least profit, it is crucial to propose different strategies 
-with the goal of increasing brand impression or overall profitability.
-
-Methodology: 
-To identify two distinct customer groups: those who generate the most profit and those who contribute the least profit to the company.  
-
-Assumption:
-We assume that we will target only the top 30 customers in each group for our analysis. 
-*/
-
+-- Question 2: How should the company tailor marketing and communication strategies to customer behaviours? --
 -- Top 5 VIP customer -- 
-WITH Profit_Table
-AS(
+WITH 
+Profit_Table AS(
 SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name
   FROM Orders o
  INNER JOIN Order_Details od
     ON o.Order_ID = od.Order_ID
  INNER JOIN Products p
     ON od.Product_ID = p.Product_ID
-INNER JOIN Customers c
+ INNER JOIN Customers c
     ON o.Customer_ID = c.Customer_ID
 )
-
 SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit
-FROM Profit_Table
-GROUP BY Customer_ID
-ORDER BY Profit DESC
-LIMIT 5;
+  FROM Profit_Table
+ GROUP BY Customer_ID
+ ORDER BY Profit DESC
+ LIMIT 5;
 
 -- Top 5 less engaging Customer --
-WITH Profit_Table
-AS(
+WITH 
+Profit_Table AS(
 SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name
   FROM Orders o
  INNER JOIN Order_Details od
@@ -264,57 +235,51 @@ SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_
 INNER JOIN Customers c
     ON o.Customer_ID = c.Customer_ID
 )
-
 SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit
-FROM Profit_Table
-GROUP BY Customer_ID
-ORDER BY Profit 
-LIMIT 5;
+  FROM Profit_Table
+ GROUP BY Customer_ID
+ ORDER BY Profit 
+ LIMIT 5;
 
-/*Question 3: How much can the company spend on acquiring new customers?
-To support the marketing team to answer this question, we can see the new customer rate monthly checking if there is any seasonal trend.
-*/
-
-WITH Payment_With_Month_Table
-AS(
+-- Question 3: How much can the company spend on acquiring new customers? --
+WITH 
+Payment_With_Month_Table AS(
 SELECT *, CAST(SUBSTRING(Payment_Date,7,10) AS SIGNED) * 100 + CAST(SUBSTRING(Payment_Date,4,5) AS SIGNED) AS `year_month`
-FROM Payments 
+  FROM Payments 
 ),
-Customer_Num_Table
-AS(
+Customer_Num_Table AS(
 SELECT `year_month`, COUNT(*) AS Customer_Number, SUM(Amount) AS Total
-FROM Payment_With_Month_Table p1
-GROUP BY `year_month`
+  FROM Payment_With_Month_Table p1
+ GROUP BY `year_month`
 ),
-New_Customer_Num_Table
-AS(
+New_Customer_Num_Table AS(
 SELECT p1.`year_month`, COUNT(*) AS New_Customer_Num, SUM(p1.Amount) AS New_Customer_Total,
        (SELECT Customer_Number
           FROM Customer_Num_Table c
-		 WHERE p1.`year_month` = c.`year_month`) AS Customer_Number,
-		(SELECT Total 
-        FROM Customer_Num_Table c
-		 WHERE p1.`year_month` = c.`year_month`) AS Customer_Total
+         WHERE p1.`year_month` = c.`year_month`) AS Customer_Number,
+	(SELECT Total 
+           FROM Customer_Num_Table c
+	  WHERE p1.`year_month` = c.`year_month`) AS Customer_Total
   FROM Payment_With_Month_Table p1
-WHERE p1.Customer_ID NOT IN (SELECT Customer_ID
-                             FROM Payment_With_Month_Table p2
-                             WHERE p1.`year_month` > p2.`year_month`)
+ WHERE p1.Customer_ID NOT IN (SELECT Customer_ID
+                                FROM Payment_With_Month_Table p2
+                               WHERE p1.`year_month` > p2.`year_month`)
 GROUP BY P1.`year_month`
 )
 SELECT `year_month`,ROUND(New_Customer_Num *100 / Customer_Number,1) AS New_Customer_Props, ROUND(New_Customer_Total *100/ Customer_Total,1) AS New_Customer_Total_Props
-FROM New_Customer_Num_Table
-ORDER BY `year_month`;
+  FROM New_Customer_Num_Table
+ ORDER BY `year_month`;
 
 -- calculate Customer Lifetime Value (LTV) --
-WITH Money_In_By_Customer_Table
-AS(
+WITH 
+Money_In_By_Customer_Table AS(
 SELECT o.Customer_ID, SUM(od.Order_qty * (od.Unit_Price - p.Buy_Price)) AS Revenue
-FROM Orders o
-INNER JOIN Order_Details od 
-ON o.Order_ID = od.Order_ID
-INNER JOIN Products p 
-ON od.Product_ID = p.Product_ID
-GROUP BY o.Customer_ID
+  FROM Orders o
+ INNER JOIN Order_Details od 
+    ON o.Order_ID = od.Order_ID
+ INNER JOIN Products p 
+    ON od.Product_ID = p.Product_ID
+ GROUP BY o.Customer_ID
 )
 SELECT ROUND(AVG(Revenue),2) AS LTV
-FROM Money_In_By_Customer_Table;
+  FROM Money_In_By_Customer_Table;
