@@ -43,6 +43,8 @@ Dataquest Guided Project: Customers and Products Analysis Using SQL.
 - Orders
 - Payments
 
+![EER diagram](https://github.com/yh-alice-chen/Customers-and-Products-Analysis/assets/147277276/1fe1dcc4-387c-4272-9d99-36d3b035dd8a)
+
 
 ## Results
 
