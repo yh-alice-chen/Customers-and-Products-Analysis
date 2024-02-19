@@ -34,6 +34,15 @@ Dataquest Guided Project: Customers and Products Analysis Using SQL.
 - Power BI - Data Visualisation
 
 ## Table Overview
+- Customers
+- Employees
+- Offices
+- Product_Lines
+- Products
+- Order_Details
+- Orders
+- Payments
+
 
 ## Results
 
