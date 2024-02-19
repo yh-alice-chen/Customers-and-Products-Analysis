@@ -161,7 +161,7 @@ SELECT 'Offices' AS TABLE_NAME,
          (SELECT COUNT(*) 
 	    FROM Offices) AS Number_Of_Rows;
 
--- Question 1: Which product line should the company order more of? --
+-- Question 1: Which product line should the company prioritise for restocking? --
 -- calculate low stock for each product --
 SELECT p.Product_ID, p.Product_Line, p.Product_Name, ROUND(SUM(o.Order_qty/p.Inventory),2) AS Low_Stock
   FROM Products p 
@@ -223,7 +223,7 @@ SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy
  ORDER BY Profit DESC
  LIMIT 5;
 
--- Top 5 less engaging Customer --
+-- Top 5 least engaging Customer --
 WITH 
 Profit_Table AS(
 SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name
