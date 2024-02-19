@@ -99,9 +99,51 @@ To help answers this questions, data analyst aims to find the customers most and
 |114|Peter|Ferguson|70311.069|
 |119|Janine|Labrune|60875.3|
 
+##### Top 5 least engaging customers
+|Customer_ID|First_Name|Last_Name|Profit|
+|-----------|----------|---------|------|
+|219|Mary|Young|2610.87|
+|198|Leslie|Taylor|6586.02|
+|473|Franco|Ricotti|9532.93|
+|103|Carine|Schmitt|10063.80|
+|489|Thomas|Smith|10868.04|
+
 ### Question 3: How much can the company spend on acquiring new customers?
 #### Problem Statement
 
+#### Objectives
+To answer this question, we can start by understanding the number of new cusotmers monthly and the percentage they contribute to the total sales and the average customer lifetime value (LTV) before evaluating how much the comapny can spend on acquiring new customers.
 #### Insights/ Findings
+##### New customers percentage and they contribute to the total sales by monthly
+|Year_Month|New_Customer_Props|New_Customer_Total|Props|
+|----------|------------------|------------------|-----|
+|200301|100|100|
+|200302|100|100|
+|200303|100|100|
+|200304|100|100|
+|200305|100|100|
+|200306|100|100|
+|200307|75|68.3|
+|200308|66.7|54.2|
+|200309|80|95.9|
+|200310|69.2|69.3|
+|200311|57.9|53.9|
+|200312|60|54.9|
+|200401|33.3|41.1|
+|200402|33.3|26.5|
+|200403|54.5|55|
+|200404|40|40.3|
+|200405|12.5|17.3|
+|200406|33.3|43.9|
+|200407|10|6.5|
+|200408|18.2|26.2|
+|200409|40|56.4|
 
-#### Query 
+##### Customer LifeTime Value (LTV)
+|LTV_Value|
+|---------|
+|39039.59|
+
+
+
+
