@@ -7,7 +7,7 @@
 
 [Data Source](#data-source)
 
-[Tools](#tools_used)
+[Tools Used](#tools_used)
 
 [Table Overview](#table-overview)
 
@@ -162,10 +162,12 @@ To address the question of optimal expenditure for acquiring new customers, a mu
 The query syntax utilised Common Table Expressions (CTEs) for better readability and management of the data flow. This structured query facilitated the extraction of meaningful metrics essential for strategic decision-making regarding customer acquisition costs.
 
 #### Summary of Findings
+The analysis has determined the average Customer Lifetime Value (LTV) to be $39,039.59. Additionally, it has revealed a fluctuating pattern of new customer acquisition and their sales contributions over a two-year period. The initial 100% new customer proportions indicate the early stages of the company, where all customers were newcomers. However, there is a noticeable decline in new customer proportions and their contribution to sales as the company moves into 2004, with the lowest new customer proportion being 10% in July 2004.
+
 #### Data Visualisations
 ##### New customers percentage and they contribute to the total sales by monthly
-|Year_Month|New_Customer_Props|New_Customer_Total|Props|
-|----------|------------------|------------------|-----|
+|Year_Month|New_Customer_Props|New_Customer_Total_Props|
+|----------|------------------|------------------------|
 |200301|100|100|
 |200302|100|100|
 |200303|100|100|
@@ -194,9 +196,23 @@ The query syntax utilised Common Table Expressions (CTEs) for better readability
 |39039.59|
 
 #### Interpretations
+The high LTV suggests that customers, once acquired, have the potential to contribute significant revenue over time. The initial 100% new customer proportions indicate the startup phase of the company, where all customers were new. The decreasing trend in new customer proportions and their sales contribution over time could suggest market saturation, increased competition, or challenges in attracting new customers.
+
 #### Recommendations
+Given the significant LTV, the company could justify a considerable investment in customer acquisition. However, the declining trend in new customer acquisition underscores the need for a revised strategy:
+
+- Enhanced Acquisition Efforts: Invest in marketing campaigns that focus on reaching new segments to increase the inflow of new customers.
+- Customer Retention Programs: Implement programs aimed at retaining existing customers, capitalising on the high LTV.
+- Market Analysis: Conduct market research to understand the factors contributing to the decline in new customer acquisition.
+- Adjustment of Acquisition Costs: Re-evaluate the customer acquisition cost in light of the LTV to ensure sustainable spending on new customer acquisition.
 
 ## Conclusion
-The analysis offers valuable insights into customer preferences and product performance, guiding data-driven decisions to enhance sales and customer satisfaction.
+The comprehensive analysis conducted in this project has provided valuable insights into the company's sales data, offering a clear understanding of customer behavior, product performance, and strategic financial planning. Through the meticulous use of SQL for data querying and manipulation, along with the powerful visualisation capabilities of Power BI, the project successfully answered several critical business questions:
 
+1. Restocking Priority: The data analysis identified key product lines that the company should prioritise for restocking, with a significant focus on the classic cars and motorcycles categories due to their high demand and low inventory levels.
+2. Marketing and Communication Strategies: The assessment of customer engagement levels has highlighted the importance of personalised marketing strategies, particularly for the top-tier customers who contribute the most to the company's profit, as well as the necessity to re-engage less active customers.
+3. Customer Acquisition Cost: Finally, by establishing the average Customer Lifetime Value (LTV), the company can now make informed decisions about the investment in acquiring new customers, ensuring that the cost of acquisition is aligned with the long-term revenue potential.
 
+The findings from this project not only answer the initial questions but also pave the way for actionable recommendations that the company can implement. These include restocking strategies, targeted marketing campaigns, customer segmentation analyses, and a re-evaluation of customer acquisition costs.
+
+This project has demonstrated the critical role of data analysis in making evidence-based decisions that can lead to improved business outcomes. With these insights, the company is well-positioned to refine its strategies in inventory management, marketing, and financial planning to drive future growth and success.
