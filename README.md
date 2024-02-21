@@ -13,6 +13,8 @@
 
 [Results](#results)
 
+[Conclusion](#conclusion)
+
 ## Project Overview
 This project leverages SQL and Power BI to analyze a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, we explore trends, patterns, and opportunities to drive strategic decisions.
 
@@ -76,7 +78,7 @@ The analysis highlights a range of products facing low inventory levels that cor
 - The "Planes" category, with the 1980s Black Hawk Helicopter, indicates a specialised but important market segment.
 - The 1917 Grand Touring Sedan stands out within "Vintage Cars," suggesting a niche market interest.
 
-#### Data Visualisations
+#### Result
 |Product_Name|Product_Line|
 |------------|------------|
 |1992 Ferrari 360 Spider red|Classic Cars|
