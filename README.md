@@ -95,6 +95,10 @@ The analysis highlights a range of products facing low inventory levels that cor
 |1917 Grand Touring Sedan|Vintage Cars|
 |2002 Suzuki XREO|Motorcycles|
 
+#### Data Visualisation 
+![Q1](https://github.com/yh-alice-chen/Customers-and-Products-Analysis/assets/147277276/5855a4a7-0630-4505-901a-c2a590760331)
+
+
 #### Interpretations
 These findings imply that specific product lines have a consistent consumer demand that outpaces current inventory levels. The Classic Cars line, being most represented, may indicate a strong market trend or a collector's demand driving sales. The presence of motorcycles, vintage cars, and planes suggests varied consumer interests, catering to both practical uses and specialty hobbies.
 
