@@ -78,7 +78,7 @@ The analysis highlights a range of products facing low inventory levels that cor
 - The "Planes" category, with the 1980s Black Hawk Helicopter, indicates a specialised but important market segment.
 - The 1917 Grand Touring Sedan stands out within "Vintage Cars," suggesting a niche market interest.
 
-#### Result
+#### Output
 |Product_Name|Product_Line|
 |------------|------------|
 |1992 Ferrari 360 Spider red|Classic Cars|
@@ -118,7 +118,7 @@ By focusing on both the most and least engaged customers, the company can strive
 The analysis identified the top 5 VIP customers, who are contributing significantly to the company’s profit, with Diego Freyre leading the list with a profit contribution of $326,519.66. Following him are Susan Nelson, Jeff Young, Peter Ferguson, and Janine Labrune, all providing substantial profits ranging from approximately $60,000 to $236,000. 
 Conversely, the top 5 least engaging customers were identified, with profits ranging from about $2,600 to $10,800, indicating a lower level of transactional activity with the company.
 
-####  Data Visualisations
+#### Output
 ##### Top 5 VIP customers
 |Customer_ID|First_Name|Last_Name|Profit|
 |-----------|----------|---------|------|
@@ -166,7 +166,7 @@ The query syntax utilised Common Table Expressions (CTEs) for better readability
 #### Summary of Findings
 The analysis has determined the average Customer Lifetime Value (LTV) to be $39,039.59. Additionally, it has revealed a fluctuating pattern of new customer acquisition and their sales contributions over a two-year period. The initial 100% new customer proportions indicate the early stages of the company, where all customers were newcomers. However, there is a noticeable decline in new customer proportions and their contribution to sales as the company moves into 2004, with the lowest new customer proportion being 10% in July 2004.
 
-#### Data Visualisations
+#### Output
 ##### New customers percentage and they contribute to the total sales by monthly
 |Year_Month|New_Customer_Props|New_Customer_Total_Props|
 |----------|------------------|------------------------|
