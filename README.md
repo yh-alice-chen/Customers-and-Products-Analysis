@@ -64,36 +64,37 @@ The relationships among these tables are crucial for a holistic analysis. Foreig
 ### Question 1: Which product line should the company priority for restocking? 
 
 #### Methodology
-To answer this question, a detailed analysis was performed using SQL queries to investigate products characterised by both low inventory and high sales performance. The methodology employed two principal steps: 
+To answer this question, a detailed analysis was performed using SQL queries to investigate products with the Top 10 high sales performance. The methodology employed two principal steps: 
 
-1. Identifying low inventory products: The inventory ratio for each product was calculated by dividing the total ordered quantity by its current inventory, identifying products nearing out of stock. The top 10 highest ratios indicated the products with the most critically low inventory levels.
+1. Identifying inventory ratio: The inventory ratio for each product was calculated by dividing the total ordered quantity by its current inventory, the higher value suggesting that the stock is indeed low and may need replenishment. The top 10 highest ratios indicated the products with the most critically low inventory levels.
 
-2. Analysing Product Performance: Subsequently, product performance was assessed by summing sales per product, which provided insights into each product's sales success.
+2. Analysing Product Sales Performance: Subsequently, product sales performance was assessed by summing sales per product, which provided insights into each product's sales success.
 
-By using Common Table Expressions (CTEs), the data on low inventory and product performance were integrated, facilitating a cross-analysis. This approach pinpointed the top 10 products that not only are nearly out of stock due to high demand but also exhibit strong sales performance, highlighting key areas for inventory management and restocking initiatives.
+By using Common Table Expressions (CTEs), the data presents the Top 10 highest sales performance products and their inventory status respectively, presenting critical information to continuously monitor these products to prevent from out of stock. 
 
 #### Summary of Findings
 The analysis highlights a range of products facing low inventory levels that correspond with strong sales performance, suggesting they are in high demand. The data reveals:
 
-- A significant presence of "Classic Cars" in the low inventory, high-performance category, with models such as the 1992 Ferrari 360 Spider red, 2001 Ferrari Enzo, and 1952 Alpine Renault 1300 indicating robust sales.
+- A significant presence of "Classic Cars" in the high-performance category, with models such as the 1992 Ferrari 360 Spider red, 2001 Ferrari Enzo, and 1952 Alpine Renault 1300 indicating robust sales.
 - "Motorcycles" also show notable performance, particularly the 2003 Harley-Davidson Eagle Drag Bike and the 2002 Suzuki XREO.
 - The "Planes" category, with the 1980s Black Hawk Helicopter, indicates a specialised but important market segment.
 - The 1917 Grand Touring Sedan stands out within "Vintage Cars," suggesting a niche market interest.
+- Most of these high-performance products, except for 1968 Ford Mustang, are cureently not urgently out of stock. 
 
 #### Analysis Output
 ##### The top ten products identified for prioritising restocking due to low inventory and strong sales performance are:
-|Product_Name|Product_Line|
-|------------|------------|
-|1992 Ferrari 360 Spider red|Classic Cars|
-|2001 Ferrari Enzo|Classic Cars|
-|1952 Alpine Renault 1300|Classic Cars|
-|2003 Harley-Davidson Eagle Drag Bike|Motorcycles|
-|1968 Ford Mustang|Classic Cars|
-|1969 Ford Falcon|Classic Cars|
-|1980s Black Hawk Helicopter|Planes|
-|1998 Chrysler Plymouth Prowler|Classic Cars|
-|1917 Grand Touring Sedan|Vintage Cars|
-|2002 Suzuki XREO|Motorcycles|
+|Product_Name|Product_Line|Product_Performance|Low_Stock|
+|------------|------------|-------------------|---------|
+|1992 Ferrari 360 Spider red|Classic Cars|276839.98|0.22|
+|2001 Ferrari Enzo|Classic Cars|190755.86|0.28|
+|1952 Alpine Renault 1300|Classic Cars|190017.96|0.13|
+|2003 Harley-Davidson Eagle Drag Bike|Motorcycles|170686|0.18|
+|1968 Ford Mustang|Classic Cars|161531.48|13.72|
+|1969 Ford Falcon|Classic Cars|152543.02|0.92|
+|1980s Black Hawk Helicopter|Planes|144959.91|0.20|
+|1998 Chrysler Plymouth Prowler|Classic Cars|142530.63|0.21|
+|1917 Grand Touring Sedan|Vintage Cars|140535.6|0.34|
+|2002 Suzuki XREO|Motorcycles|135767.03|0.10|
 
 #### Data Visualisation 
 ![Q1](https://github.com/yh-alice-chen/Customers-and-Products-Analysis/assets/147277276/5855a4a7-0630-4505-901a-c2a590760331)
@@ -103,7 +104,7 @@ The analysis highlights a range of products facing low inventory levels that cor
 These findings imply that specific product lines have a consistent consumer demand that outpaces current inventory levels. The Classic Cars line, being most represented, may indicate a strong market trend or a collector's demand driving sales. The presence of motorcycles, vintage cars, and planes suggests varied consumer interests, catering to both practical uses and specialty hobbies.
 
 #### Recommendations
-- Inventory Replenishment: Prioritise restocking the high-demand classic cars and motorcycles to prevent potential sales loss due to inventory shortages.
+- Inventory Replenishment: Prioritise restocking the high-demand, especially classic cars and motorcycles to prevent potential sales loss due to inventory shortages.
 - Marketing Strategies: Develop targeted marketing campaigns that cater to the interests of collectors and enthusiasts, particularly for the classic cars and motorcycles categories.
 - Product Diversification: Evaluate the potential for expanding the planes and vintage cars product lines to meet niche market demands.
 - Sales Forecasting: Implement improved sales forecasting methods to anticipate inventory needs better and prevent similar low-stock scenarios in the future.
