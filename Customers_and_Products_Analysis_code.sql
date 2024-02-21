@@ -196,8 +196,10 @@ SELECT p.Product_ID, p.Product_Line, p.Product_Name,ROUND(SUM(o.Order_qty * o.Un
  GROUP BY p.Product_ID
  ORDER BY Product_Performance DESC
 )
-SELECT Product_Name, Product_Line
-  FROM Product_Performance 
+SELECT p.Product_Name, p.Product_Line, p.Product_Performance, l.Low_Stock
+  FROM Product_Performance p
+INNER JOIN Low_Stock l 
+   ON p.Product_ID = l.Product_ID
  WHERE Product_ID IN (SELECT Product_ID
 			FROM Low_Stock)
  GROUP BY Product_ID
