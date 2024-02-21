@@ -1,6 +1,6 @@
 # Customers-and-Products-Analysis
 
-## Table Of Content 
+## Table of Contents 
 [Project Overview](#project-overview)
 
 [Objective](#objective)
@@ -11,7 +11,7 @@
 
 [Table Overview](#table-overview)
 
-[Results](#results)
+[Analysis & Results](#analysis-&-results)
 
 [Conclusions](#conclusions)
 
@@ -28,20 +28,23 @@ The goal of this project is to answer critical business questions related to sal
 - Question 3: How much can the company spend on acquiring new customers?
 
 ## Data Source:
-The analysis is based on a comprehensive dataset from a Dataquest Guided Project: Customers and Products Analysis Using SQL.
+The dataset used for this analysis is sourced from Dataquest's Guided Project: "Customers and Products Analysis Using SQL". It is publicly available and can be accessed directly through Dataquest's platform. This dataset has been instrumental in providing a comprehensive view of the retail company's sales data, allowing for a detailed exploration of customer behaviors and product performance.
 
 ## Tools Used
 - MySQL - For data querying, manipulation, and analysis
 
 ## Table Overview
-- Customers
-- Employees
-- Offices
-- Product_Lines
-- Products
-- Order_Details
-- Orders
-- Payments
+The database schema consists of eight tables, each capturing a unique aspect of the business operation:
+- Customers: Contains customer demographic information, such as names, addresses, and phone numbers, enabling customer segmentation and targeted marketing efforts.
+- Employees: Lists employee details, such as names and job titles, along with their office assignments. 
+- Offices: Provides information on each of the company’s office locations, including phone numbers and addresses. 
+- Product_Lines: Categorizes products into different lines based on their type, such as "Classic Cars" or "Motorcycles".
+- Products: Includes detailed information on each product, including name, scale, vendor,inventory levels, buy_price and MSRP.
+- Order_Details: Detailing the quantity of each product ordered and the price at which it was sold. This is a junction table that links the 'Products' and 'Orders' tables.
+- Orders: Tracks all customer orders, including order dates and shipping details.
+- Payments: Records all customer payments, providing data on customer purchasing power and payment patterns.
+
+The relationships among these tables are crucial for a holistic analysis. Foreign keys, like 'Product_ID' and 'Customer_ID', serve as the links that tie sales data to specific products and customers, respectively. This relational structure enables complex queries that can answer business-critical questions.
 
 ![EER diagram](https://github.com/yh-alice-chen/Customers-and-Products-Analysis/assets/147277276/1fe1dcc4-387c-4272-9d99-36d3b035dd8a)
 
@@ -56,7 +59,7 @@ The analysis is based on a comprehensive dataset from a Dataquest Guided Project
 |Employees|8|23|
 |Offices|9|7|
 
-## Results
+## Analysis & Results
 
 ### Question 1: Which product line should the company priority for restocking? 
 
