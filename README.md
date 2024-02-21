@@ -127,22 +127,22 @@ Conversely, the top 5 least engaging customers were identified, with profits ran
 
 #### Analysis Output
 ##### Top 5 VIP customers
-|Customer_ID|First_Name|Last_Name|Profit|
-|-----------|----------|---------|------|
-|141|Diego|Freyre|326519.661|
-|124|Susan|Nelson|236769.391|
-|151|Jeff|Young|72370.089|
-|114|Peter|Ferguson|70311.069|
-|119|Janine|Labrune|60875.3|
+|Customer_ID|First_Name|Last_Name|Profit|Country|City|
+|-----------|----------|---------|------|-------|----|
+|141|Diego|Freyre|326519.661|Spain|Madrid|
+|124|Susan|Nelson|236769.391|USA|San Rafael|
+|151|Jeff|Young|72370.089|USA|NYC|
+|114|Peter|Ferguson|70311.069|Australia|Melbourne|
+|119|Janine|Labrune|60875.3|France|Nantes|
 
 ##### Top 5 least engaging customers
-|Customer_ID|First_Name|Last_Name|Profit|
-|-----------|----------|---------|------|
-|219|Mary|Young|2610.87|
-|198|Leslie|Taylor|6586.02|
-|473|Franco|Ricotti|9532.93|
-|103|Carine|Schmitt|10063.80|
-|489|Thomas|Smith|10868.04|
+|Customer_ID|First_Name|Last_Name|Profit|Country|City|
+|-----------|----------|---------|------|-------|----|
+|219|Mary|Young|2610.87|USA|Glendale|
+|198|Leslie|Taylor|6586.02|USA|Brickhaven|
+|473|Franco|Ricotti|9532.93|Italy|Milan|
+|103|Carine|Schmitt|10063.80|France|Nantes|
+|489|Thomas|Smith|10868.04|UK|London|
 
 #### Interpretations
 The contrast between the profit contributions of VIP and least engaging customers suggests that a small segment of customers is driving a large portion of the company’s revenue. This disparity indicates the presence of a highly valuable customer base that may require personalised attention and retention strategies to maintain their high engagement levels.
