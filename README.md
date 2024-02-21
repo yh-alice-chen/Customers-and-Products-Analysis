@@ -13,7 +13,7 @@
 
 [Results](#results)
 
-[Conclusion](#conclusion)
+[Conclusions](#conclusions)
 
 ## Project Overview
 This project leverages SQL and Power BI to analyze a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, we explore trends, patterns, and opportunities to drive strategic decisions.
@@ -31,8 +31,7 @@ The goal of this project is to answer critical business questions related to sal
 The analysis is based on a comprehensive dataset from a Dataquest Guided Project: Customers and Products Analysis Using SQL.
 
 ## Tools Used
-- SQL - For data querying, manipulation, and analysis
-- Power BI - For visualizing data and uncovering insights through interactive dashboards
+- MySQL - For data querying, manipulation, and analysis
 
 ## Table Overview
 - Customers
@@ -209,7 +208,7 @@ Given the significant LTV, the company could justify a considerable investment i
 - Market Analysis: Conduct market research to understand the factors contributing to the decline in new customer acquisition.
 - Adjustment of Acquisition Costs: Re-evaluate the customer acquisition cost in light of the LTV to ensure sustainable spending on new customer acquisition.
 
-## Conclusion
+## Conclusions
 The comprehensive analysis conducted in this project has provided valuable insights into the company's sales data, offering a clear understanding of customer behavior, product performance, and strategic financial planning. Through the meticulous use of SQL for data querying and manipulation, along with the powerful visualisation capabilities of Power BI, the project successfully answered several critical business questions:
 
 1. Restocking Priority: The data analysis identified key product lines that the company should prioritise for restocking, with a significant focus on the classic cars and motorcycles categories due to their high demand and low inventory levels.
