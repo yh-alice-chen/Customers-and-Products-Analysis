@@ -16,7 +16,7 @@
 [Conclusions](#conclusions)
 
 ## Project Overview
-This project leverages SQL and Power BI to analyze a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, we explore trends, patterns, and opportunities to drive strategic decisions.
+This project applies SQL to analyse a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, we explore trends, patterns, and opportunities to drive strategic decisions.
 
 ## Objective: 
 The goal of this project is to answer critical business questions related to sales performance, customer engagement, and product popularity.
