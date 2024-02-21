@@ -79,7 +79,7 @@ The analysis highlights a range of products facing low inventory levels that cor
 - "Motorcycles" also show notable performance, particularly the 2003 Harley-Davidson Eagle Drag Bike and the 2002 Suzuki XREO.
 - The "Planes" category, with the 1980s Black Hawk Helicopter, indicates a specialised but important market segment.
 - The 1917 Grand Touring Sedan stands out within "Vintage Cars," suggesting a niche market interest.
-- Most of these high-performance products, except for 1968 Ford Mustang, are cureently not urgently out of stock. 
+- In most cases, these high-performance products maintain a stock level that is not yet critical but warrants close monitoring to prevent stockouts.
 
 #### Analysis Output
 ##### The top ten products identified for prioritising restocking due to low inventory and strong sales performance are:
@@ -98,7 +98,6 @@ The analysis highlights a range of products facing low inventory levels that cor
 
 #### Data Visualisation 
 ![Q1](https://github.com/yh-alice-chen/Customers-and-Products-Analysis/assets/147277276/5855a4a7-0630-4505-901a-c2a590760331)
-
 
 #### Interpretations
 These findings imply that specific product lines have a consistent consumer demand that outpaces current inventory levels. The Classic Cars line, being most represented, may indicate a strong market trend or a collector's demand driving sales. The presence of motorcycles, vintage cars, and planes suggests varied consumer interests, catering to both practical uses and specialty hobbies.
