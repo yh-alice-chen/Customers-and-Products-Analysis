@@ -66,7 +66,7 @@ The relationships among these tables are crucial for a holistic analysis. Foreig
 #### Methodology
 To answer this question, a detailed analysis was performed using SQL queries to investigate products with the Top 10 high sales performance. The methodology employed two principal steps: 
 
-1. Identifying inventory ratio: The inventory ratio for each product was calculated by dividing the total ordered quantity by its current inventory, the higher value suggesting that the stock is indeed low and may need replenishment. The top 10 highest ratios indicated the products with the most critically low inventory levels.
+1. Identifying Inventory Ratio: The inventory ratio for each product was calculated by dividing the total ordered quantity by its current inventory, the higher value suggesting that the stock is indeed low and may need replenishment. The top 10 highest ratios indicated the products with the most critically low inventory levels.
 
 2. Analysing Product Sales Performance: Subsequently, product sales performance was assessed by summing sales per product, which provided insights into each product's sales success.
 
