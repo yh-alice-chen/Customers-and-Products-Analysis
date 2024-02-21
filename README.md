@@ -79,6 +79,7 @@ The analysis highlights a range of products facing low inventory levels that cor
 - The 1917 Grand Touring Sedan stands out within "Vintage Cars," suggesting a niche market interest.
 
 #### Output
+##### Top 10 Products with Low Inventory and Strong Sales Performance
 |Product_Name|Product_Line|
 |------------|------------|
 |1992 Ferrari 360 Spider red|Classic Cars|
