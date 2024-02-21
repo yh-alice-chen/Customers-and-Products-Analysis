@@ -20,8 +20,8 @@ The dataset used for this analysis is sourced from Dataquest's Guided Project: "
 - Power BI - For visualising data and uncovering insights
 
 ## Files
-- Customer_and_Products_Analysis_Code - provide a detailed MYSQL query for this project, from importing data to analysis.
-- EER diagram - show the relationship between each table.
-- Presentation - Provide a detailed analysis and insights for this project.
-- Table - Raw data for this project.
+- Customer_and_Products_Analysis_Code - Contains the comprehensive MySQL queries used for the project, detailing every step from data import to the execution of complex analyses.
+- EER diagram - A visual representation of the database schema, illustrating how tables are interrelated, which is crucial for understanding the data structure and the relational aspects of the database.
+- Presentation - A presentation file with in-depth analysis and insights derived from the project, perfect for stakeholders looking to grasp the insightful findings in a visual format.
+- Table - Includes the raw data tables used in the project, serving as the foundation for all queries and analyses conducted.
 
