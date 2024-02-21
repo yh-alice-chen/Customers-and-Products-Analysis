@@ -210,7 +210,7 @@ INNER JOIN Low_Stock l
 -- Top 5 VIP customer -- 
 WITH 
 Profit_Table AS(
-SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name
+SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name, c.Country, c.City
   FROM Orders o
  INNER JOIN Order_Details od
     ON o.Order_ID = od.Order_ID
@@ -219,7 +219,7 @@ SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_
  INNER JOIN Customers c
     ON o.Customer_ID = c.Customer_ID
 )
-SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit
+SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit, Country, City
   FROM Profit_Table
  GROUP BY Customer_ID
  ORDER BY Profit DESC
@@ -228,7 +228,7 @@ SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy
 -- Top 5 least engaging Customer --
 WITH 
 Profit_Table AS(
-SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name
+SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_Name AS First_Name, c.Contact_Last_Name AS Last_Name, c.Country, c.City
   FROM Orders o
  INNER JOIN Order_Details od
     ON o.Order_ID = od.Order_ID
@@ -237,7 +237,7 @@ SELECT o.Customer_ID, od.Order_Qty, od.Unit_Price, p.Buy_Price, c.Contact_First_
 INNER JOIN Customers c
     ON o.Customer_ID = c.Customer_ID
 )
-SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit
+SELECT Customer_ID, First_Name, Last_Name, ROUND(SUM(Order_Qty * (Unit_Price-Buy_Price)),3) AS Profit, Country, City
   FROM Profit_Table
  GROUP BY Customer_ID
  ORDER BY Profit 
