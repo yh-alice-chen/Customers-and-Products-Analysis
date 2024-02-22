@@ -1,7 +1,7 @@
 # Customers-and-Products-Analysis
 
 ## Project Overview
-This project applies SQL to analyse a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, we explore trends, patterns, and opportunities to drive strategic decisions.
+This project applies SQL to analyse a retail company's sales data, aiming to uncover insights into customer behaviors and product performance. Through meticulous data analysis, trends, patterns, and opportunities to drive strategic decisions are explored.
 
 ## Objective: 
 The goal of this project is to support stakeholders in answering critical business questions related to sales performance, customer engagement, and product popularity, providing insights for decision-making.
